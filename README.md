@@ -2,6 +2,7 @@
 Demo repo 201909
 
 ##  Python Environment
+* Python 2 / 3
 * Pip
 * VirtualEnv
 * Running
