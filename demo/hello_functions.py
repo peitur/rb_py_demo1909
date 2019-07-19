@@ -56,7 +56,7 @@ def lambda_select( v ):
 
     elif is_type( v, "float" ):
         return lambda x: print("%s is float" % (x) )
-        
+
     else:
         return lambda x: print("%s unknown" % (x) )
 
