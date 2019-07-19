@@ -26,9 +26,9 @@ def func6( v1, *v2, **v3 ):
         for x in v2:
             print("[func6] v2:\t %s" % ( x ) )
 
-    if len( v3 ) > 0:
-        for x in v3:
-            print("[func6] v3: \t %s: %s" % ( x, v3[x] ) )
+    if len( v3 ) > 0 and is_type( v3, "dict" ):
+        for x, y in v3.items():
+            print("[func6] v3: \t %s: %s" % ( x, y ) )
 
 def is_type( a, b ):
     if type( a ).__name__ == b:
