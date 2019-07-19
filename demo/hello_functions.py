@@ -35,6 +35,31 @@ def is_type( a, b ):
         return True
     return False
 
+def lambda_select( v ):
+    if is_type( v, "str" ):
+        return lambda x: print("%s is string" % (x) )
+
+    elif is_type( v, "int" ):
+        return lambda x: print("%s is int" % (x) )
+
+    elif is_type( v, "dict" ):
+        return lambda x: print("%s is dict" % (x) )
+
+    elif is_type( v, "list" ):
+        return lambda x: print("%s is list" % (x) )
+
+    elif is_type( v, "bool" ):
+        return lambda x: print("%s is boolean" % (x) )
+
+    elif is_type( v, "double" ):
+        return lambda x: print("%s is double" % (x) )
+
+    elif is_type( v, "float" ):
+        return lambda x: print("%s is float" % (x) )
+        
+    else:
+        return lambda x: print("%s unknown" % (x) )
+
 if __name__ == "__main__":
 
     func1()
@@ -57,3 +82,11 @@ if __name__ == "__main__":
     func6( "aaa" )
     func6( "aaa", "zzz", "yyy", "xxx" )
     func6( "aaa",  "zzz", "yyy", "xxx", name="test", type="sample", debug=True )
+
+    lf1=lambda x: x * x
+    for x in range(0,4):
+        print( "Lambda1: %s: %s " % ( x, lf1( x ) ))
+
+    for x in (1, "aaa", [], {}, False, 3.14 ):
+        f = lambda_select( x )
+        f( x )
