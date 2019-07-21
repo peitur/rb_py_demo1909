@@ -21,7 +21,6 @@ Demo repo 201909
 5. hello_loops.py
 6. hello_imports.py
 7. hello_error.py
-8. hello_argv.py
 
 #### Exercises
 
@@ -31,7 +30,8 @@ Demo repo 201909
 3. hello_loops.py
 4. hello_structures.py
 5. hello_functions.py
-6. hello_io.py
+6. hello_argv.py
+7. hello_io.py
 
 #### Exercises
 

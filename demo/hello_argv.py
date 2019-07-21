@@ -16,12 +16,15 @@ if __name__ == "__main__":
     mode = None
     if len( sys.argv ) < 2:
         print("Missing mode")
+        print("Supported modes are [%s]"% ( ", ".join( SUPMODE )) )
         sys.exit(1)
 
     mode = sys.argv[1]
 
     if mode not in SUPMODE:
         print("Mode '%s' not supported" % ( mode ) )
+        print("Supported modes are [%s]"% ( ", ".join( SUPMODE )) )
+        sys.exit(2)
 
     ## If classic commandline arguments are wanted, getopt can parse and suply a classic way of getting the parameters
     try:
@@ -33,28 +36,28 @@ if __name__ == "__main__":
         sys.exit(2)
 
     ## Options default values
-    debug = False
-    filename = None
+    options = dict()
+    options["debug"] = False
+    options["filename"] = None
+    options["output"] = None
+
     filename_exists = False
-    output = None
 
     ## Iterate the options lists and values
     for o, a in opts:
         if o in ( "-d", "--debug" ):
-            verbose = True
+            options["debug"] = True
 
         elif o in ("-o", "--output"):
-            output = a
+            options["output"] = a
 
         elif o in ("-f", "--file"):
-            filename = a
+            options["filename"] = a
 
 
-    if filename:
-        filename_exists = os.path.exists( filename )
+    if options["filename"]:
+        filename_exists = os.path.exists( options["filename"] )
 
     print("################################################")
     print("Mode : %s" % ( mode ) )
-    print("Debug : %s" % ( debug ) )
-    print("Output : %s" % ( output ) )
-    print("File : %s [%s]" % ( filename, filename_exists ) )
+    pprint( options )
