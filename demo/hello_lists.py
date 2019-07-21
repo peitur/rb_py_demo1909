@@ -18,6 +18,8 @@ if __name__ == "__main__":
     ## copying the list into a new list (copy, not reference)
     list3 = list1.copy()
 
+    list4 = ["a","b","c","d","e","f","g","h","i","j","k","l"]
+
     print("\n# start list")
     pprint( list1 )
 
@@ -50,6 +52,10 @@ if __name__ == "__main__":
 
     print("\n# basically, enumerate gives us a list/iterable of tuples")
     pprint(  list( enumerate( list1 ) ) )
+
+    print("\n## Joining lists")
+    print( ", ".join( list4 ) )
+
 
     ######################################################
     print("\n# Using lists as stacks")

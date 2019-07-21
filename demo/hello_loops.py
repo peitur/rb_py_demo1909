@@ -20,19 +20,17 @@ def loop_part2():
     print("############# LIST ##############")
     print("Sample [%s]: %s" % ( len(list3), list3 ) )
 
-    print("## Print list as is:")
+    print("\n## Print list as is:")
     for x in list3:
         print(x)
 
-    print("## Sorted list:")
+    print("\n## Sorted list:")
     for x in sorted( list3 ):
         print(x)
 
-    print("## Print list enumerated:")
+    print("\n## Print list enumerated:")
     for a, b  in enumerate( list3 ):
         print( "%s => %s" % (a, b) )
-
-
 
     print("############# DICTS ##############")
     ## empty dictionary, empty
