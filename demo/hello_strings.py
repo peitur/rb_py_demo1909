@@ -7,8 +7,9 @@ if __name__ == "__main__":
     print( dir( str0 ) )
 
     print("#################################################")
-    print( "[s1] hello %s" % ( "world" ) )
-    print( "[s2] hello %30s again" % ( "world" ) )
-    print( "[s3] hello %-30s again" % ( "world" ) )
-    print( "[s4] hello again for the %d time" % ( 10 ) )
-    print( "[s5] hello %(name)s" % {"name":"world" } )
+    ## simple build stringh with variables
+    print( "\n[s1] hello %s and %s" % ( "world", "others" ) )
+    print( "\n[s2] hello %30s again" % ( "world" ) )
+    print( "\n[s3] hello %-30s again" % ( "world" ) )
+    print( "\n[s4] hello again for the %d time" % ( 10 ) )
+    print( "\n[s5] hello %(name)s for %(time)s" % {"name":"world", "time":"last" } )
