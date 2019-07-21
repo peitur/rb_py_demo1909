@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     ## If classic commandline arguments are wanted, getopt can parse and suply a classic way of getting the parameters
     try:
-        opts, args = getopt.getopt(sys.argv[ 2: ], "hf:o:d", ["help", "output=", "debug", "file="])
+        opts, args = getopt.getopt(sys.argv[ 2: ], "hf:o:d", ["help", "output=", "debug", "file=", "url="])
         pprint( opts )
         pprint( args )
     except getopt.GetoptError as err:
@@ -40,6 +40,7 @@ if __name__ == "__main__":
     options["debug"] = False
     options["filename"] = None
     options["output"] = None
+    options["url"] = None
 
     filename_exists = False
 
@@ -48,16 +49,20 @@ if __name__ == "__main__":
         if o in ( "-d", "--debug" ):
             options["debug"] = True
 
-        elif o in ("-o", "--output"):
+        elif o in ("-o", "--output" ):
             options["output"] = a
 
-        elif o in ("-f", "--file"):
+        elif o in ("-f", "--file" ):
             options["filename"] = a
 
+        elif o in ( "--url" ):
+            options["url"] = a
 
     if options["filename"]:
         filename_exists = os.path.exists( options["filename"] )
 
     print("################################################")
     print("Mode : %s" % ( mode ) )
+    print("------------------------------------------------")
     pprint( options )
+    print("################################################")
