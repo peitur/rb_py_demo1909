@@ -43,6 +43,14 @@ if __name__ == "__main__":
     print("\n# list3, copy of list1")
     pprint( list3 )
 
+
+    print("\n# lets print a list with indexes" )
+    for i, e in enumerate( list1 ):
+        print("%d > %s" % ( i, e ) )
+
+    print("\n# basically, enumerate gives us a list/iterable of tuples")
+    pprint(  list( enumerate( list1 ) ) )
+
     ######################################################
     print("\n# Using lists as stacks")
 
