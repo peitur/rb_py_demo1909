@@ -42,3 +42,34 @@ if __name__ == "__main__":
 
     print("\n# list3, copy of list1")
     pprint( list3 )
+
+    ######################################################
+    print("\n# Using lists as stacks")
+
+
+    ## in stacks, we put data ontop and remove the most top elment all the time
+    data = ("aaaa","bbbb","cccc")
+    stack = list()
+    for elem in data:
+        print("# append '%s'" % ( elem ) )
+        stack.append( elem )
+
+    pprint(stack)
+    print("# pop last element")
+    pprint( stack.pop() )
+    pprint( stack )
+
+    ######################################################
+    print("\n# Using lists as queue")
+
+    ## in queues, we insert elements on the top and extract data in the other end
+    data = ("xxxx","zzzzz","wwwww" )
+    queue = list()
+    for elem in data:
+        print("# append '%s'" % ( elem ) )
+        queue.append( elem )
+
+    pprint(queue)
+    print("# pop most left element")
+    pprint( queue.pop( 0 ) )
+    pprint( queue )
