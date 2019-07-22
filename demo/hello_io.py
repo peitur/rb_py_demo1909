@@ -37,7 +37,7 @@ def write_file( filename, data ):
 ## Hashing large files
 ################################################################################
 def file_hash( filename, chksum="sha256" ):
-    BLOCKSIZE = 65536
+    BLOCKSIZE = 4096
 
     if chksum == "sha1":
         hasher = hashlib.sha1()
@@ -73,4 +73,4 @@ if __name__ == "__main__":
 
     if filename:
         print( "File lines: %s" % ( len( load_file(filename ) ) ) )
-        print( "File checksum [%s]: %s" % ( checksum, file_hash( filename, checksum ) ) )
+        print( "File checksum [%s]: %s" % ( checksum, file_hash( filename, chksum=checksum ) ) )
