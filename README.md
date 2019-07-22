@@ -32,6 +32,7 @@ Demo repo 201909
 5. hello_functions.py
 6. hello_argv.py
 7. hello_io.py
+8. hello_regexp.py
 
 #### Exercises
 
@@ -47,5 +48,10 @@ Demo repo 201909
 3. hello_threads.py
 4. hello_...
 
+### In the world
+1. hello_flask.py
+2. hello_url.py
+3. hello_sqlite.py
+4. hello_subprocess.py
 ### Testing
 1. hello_testing.py
