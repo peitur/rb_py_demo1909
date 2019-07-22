@@ -6,12 +6,15 @@
 import sys, os, json, re
 from pprint import pprint
 
-
+## reading text file, clean read, one line at a time.
+## Note that this reader is stripping all whitespaces at beginnging and end of each line!!
+## All reading is meant to be used for configuration! (mainly json)
 def _read_text( filename ):
     result = list()
     try:
         fd = open( filename, "r" )
         for line in fd.readlines():
+            # strip all whitespaces
             result.append( line.lstrip().rstrip() )
         return result
     except Exception as e:
@@ -19,9 +22,11 @@ def _read_text( filename ):
 
     return result
 
+## convert the text read from file from json (assumed) to python internal structure
 def _read_json( filename ):
     return json.loads( "\n".join( _read_text( filename ) ) )
 
+## File loading abstraction, special handling of json files
 def load_file( filename ):
     filesplit = re.split( r"\.", filename )
     if filesplit[-1] in ( "json" ):
@@ -29,7 +34,23 @@ def load_file( filename ):
     else:
         return _read_text( filename )
 
+## Write json content, nicely formated, to file
+def _write_json( filename, data ):
+    return _write_text( filename, json.dumps( data, indent=2, sort_keys=True ) )
 
+## generic file writer
+def _write_text( filename, data ):
+    fd = open( filename, "w" )
+    fd.write( str( data ) )
+    fd.close()
+
+## File writer abstraction with special handling of json files
+def write_file( filename, data ):
+    filesplit = re.split( "\.", filename )
+    if filesplit[-1] in ( "json" ):
+        return _write_json( filename, data )
+    else:
+        return _write_text( filename, data )
 
 if __name__ == "__main__":
 
