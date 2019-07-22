@@ -51,12 +51,18 @@ if __name__ == "__main__":
     "type": "sample"}
 
     print("\n## Json loading, printed as pprint in python format")
+    print("\n#--------------------------------------")
     data_py = json.loads( data )
     pprint( data_py )
+    print("\n#--------------------------------------")
 
 
     print("\n## Structure, printed as json converted from python structure format")
+    print("\n#--------------------------------------")
+    print( json.dumps( strct ) )
+    print("\n#--------------------------------------")
     print( json.dumps( strct, sort_keys=True, indent=4, separators=(',', ': ')))
+    print("\n#--------------------------------------")
 
     if len( sys.argv ) > 1:
         filename = sys.argv[1]
