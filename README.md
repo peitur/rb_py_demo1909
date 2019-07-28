@@ -27,12 +27,13 @@ Demo repo 201909
 ### Bit more then basic - demo/
 1. hello_lists.py
 2. hello_dicts.py
-3. hello_loops.py
-4. hello_structures.py
-5. hello_functions.py
-6. hello_argv.py
-7. hello_io.py
-8. hello_regexp.py
+3. hello_iterator.py
+4. hello_loops.py
+5. hello_structures.py
+6. hello_functions.py
+7. hello_argv.py
+8. hello_io.py
+9. hello_regexp.py
 
 #### Exercises
 
