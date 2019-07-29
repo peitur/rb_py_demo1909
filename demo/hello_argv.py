@@ -7,7 +7,22 @@ from pprint import pprint
 
 SUPMODE=("get", "exists", "help")
 
+## This is a simple application that takes a number of predefined parameters and throws exception on unknown options.
+##
+
+def print_help( ):
+    print("Allowed modes are: %s" % (", ".join( SUPMODE )) )
+    print("Allowed options are:")
+    print("-h, --help")
+    print("-d, --debug")
+    print("-f, --file \t <str>")
+    print("-o, --output \t <str>")
+    print("--url \t <str>")
+
+
 if __name__ == "__main__":
+
+    ## a list of all arguments are available in the sys.argv list. Index 0 is the executed scripts name.
 
     ## sys.argv contains all commadn line arguments.
     ## This is a notmal list
@@ -16,14 +31,14 @@ if __name__ == "__main__":
     mode = None
     if len( sys.argv ) < 2:
         print("Missing mode")
-        print("Supported modes are [%s]"% ( ", ".join( SUPMODE )) )
+        print_help()
         sys.exit(1)
 
     mode = sys.argv[1]
 
     if mode not in SUPMODE:
         print("Mode '%s' not supported" % ( mode ) )
-        print("Supported modes are [%s]"% ( ", ".join( SUPMODE )) )
+        print_help()
         sys.exit(2)
 
     ## If classic commandline arguments are wanted, getopt can parse and suply a classic way of getting the parameters
@@ -33,6 +48,7 @@ if __name__ == "__main__":
         pprint( args )
     except getopt.GetoptError as err:
         print( err )
+        print_help()
         sys.exit(2)
 
     ## Options default values
@@ -58,9 +74,12 @@ if __name__ == "__main__":
         elif o in ( "--url" ):
             options["url"] = a
 
+    ## just continued example, checking if the given file actually exists.
     if options["filename"]:
         filename_exists = os.path.exists( options["filename"] )
 
+
+    ## Printing resulting info
     print("################################################")
     print("Mode : %s" % ( mode ) )
     print("------------------------------------------------")
