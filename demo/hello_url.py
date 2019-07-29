@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# https://docs.python.org/3/library/urllib.request.html
+
 import sys,re,os,re, datetime
 import urllib.request
 import json
