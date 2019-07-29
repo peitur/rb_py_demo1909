@@ -10,15 +10,6 @@ def get_pypi_url( module = "" ):
     return "https://pypi.python.org/pypi/%s/json" % ( module )
 
 def get_request( url , **opt ):
-    x_size = 0
-    l_size = 0
-    r_size = 0
-    bsize=1024
-    overwrite = False
-    timeout = 10
-
-    if 'bsize' in opt: bsize = opt['bsize']
-    if 'timeout' in opt: timeout = opt['timeout']
 
     req = urllib.request.Request( url = url )
     data = None
