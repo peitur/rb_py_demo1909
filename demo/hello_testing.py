@@ -1,31 +1,52 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3 -m unittest
 
 # python -m unittest hello_testing.py
 
 import unittest
+import sys
+
+from pprint import pprint
 
 def suite():
     suite = unittest.TestSuite()
-    suite.addTest(TestSomething1('testing_something_1'))
-    suite.addTest(TestSomething2('testing_something_2'))
+    suite.addTest(TestSomethingAAAAAA('testing_something_1'))
+    suite.addTest(TestSomethingBBBBBB('testing_something_2'))
     return suite
 
-class TestSomething1(unittest.TestCase):
+class TestSomethingAAAAAA(unittest.TestCase):
 
     def setUp(self):
         pass
 
-    def tearDown():
+    def tearDown( self ):
         pass
 
-class TestSomething2(unittest.TestCase):
+    def test_int_equals( self ):
+        self.assertEqual( "abc", "abc" )
+
+    def test_int_a_in_str( self ):
+        self.assertIn( "b", "abc" )
+
+class TestSomethingBBBBBB(unittest.TestCase):
 
     def setUp(self):
+        self._ints = [1,2,3,4,5,6,7,8]
+
+    def tearDown( self ):
         pass
 
-    def tearDown():
-        pass
+    def test_int_equals( self ):
+        self.assertEqual( 1, 1 )
+
+    def test_int_not_equals( self ):
+        self.assertNotEqual( 1,2 )
+
+    def test_int_in_list( self ):
+        self.assertIn( 3, self._ints )
+
+    def test_int_not_in_list( self ):
+        self.assertNotIn( 30, self._ints )
 
 if __name__ == "__main__":
-    runner = unittest.TextTestRunner()
-    runner.run( suite() )
+#    runner = unittest.TextTestRunner( stream=sys.stderr, descriptions=True, verbosity=2, failfast=False ).run( suite() )
+    unittest.main( verbosity=2 )
