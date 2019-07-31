@@ -1,3 +1,9 @@
+include
+lib
+lib64
+bin
+pip-selfcheck.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
