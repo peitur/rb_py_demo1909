@@ -1,9 +1,12 @@
 
 # Exercises, set 2
 
- 1. Create a cli application that counts each word and prints the to 10 most common words in a large file (sorted).
+ 1. Create a cli application that counts each word and prints them sorted (separate on whitespaces for simplicity).
+ For simplicity, assume all input files are text files.
+ Bonus: print the 10 most common words only.
 
 ```
+./exercise2.1.py somefile.txt
 a : 131
 something : 123
 ...
