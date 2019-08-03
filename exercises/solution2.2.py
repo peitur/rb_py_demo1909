@@ -3,6 +3,7 @@
 import os, sys, re
 import json
 import datetime
+import socket
 
 from pprint import pprint
 from flask import Flask, escape, request
@@ -35,11 +36,12 @@ def page_index():
 @app.route('/health')
 def page_heath():
     data = dict()
-    data['timestamp'] = str( datetime.datetime.now() )
-    h = load_health( "sample/health1.json" )
-    data['status'] = status_color( h )
 
-    data.update( h )
+    data['timestamp'] = str( datetime.datetime.now() )
+    data['hostname'] = socket.gethostname()
+    h = load_health( "sample/health1.json" )
+    data['message'] = h
+    data['status'] = status_color( h )
 
     return json.dumps( data )
 
