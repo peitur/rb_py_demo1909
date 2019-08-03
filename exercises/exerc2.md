@@ -15,6 +15,14 @@ something : 123
  2. Create a flask based status reporter. Create something that checks the system load, free memory and disk usage.
  Output the content as a json status message with Flask.
 
+TIP: In this environment (demo project root), set virtualenv, install Flask.
+```bash
+make init
+source bin/activate
+pip3 install Flask
+```
+
+Output example:
 ```json
 {
   "hostname":"host.name.se",
