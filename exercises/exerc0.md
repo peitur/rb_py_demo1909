@@ -31,6 +31,7 @@ TIP: Use the enumerate builtin function.
 
 3. Create a list of numbers (float and integers) and calculate the average value.
 
+
 3.1. Modify 3 with type checks. Check for int and float tpyes. Anything else should be just ignored.
 Note: Remember that this changes the average item count.
 

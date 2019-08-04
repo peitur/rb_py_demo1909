@@ -4,8 +4,24 @@ Demo repo 201909
 ##  Python Environment
 * Python 2 / 3
 * Pip
-* VirtualEnv
+* Virtualenv
 * Running
+
+### Virtualenv
+Initiation has been prepared in the Makefile.
+```bash
+make init
+```
+
+Use environment:
+```bash
+source bin/activate
+```
+
+Cleanup:
+```bash
+make cleanup
+```
 
 ## Programming part
 * Basic, if you've never seen this before
