@@ -9,6 +9,7 @@ if __name__ == "__main__":
     an_integer = 42
     a_float = 3.14
     A_CONST = 3.14
+    a_anon_f = lambda x, y: x * y
 
     ## Everything is references, chainging copies also changes original
 

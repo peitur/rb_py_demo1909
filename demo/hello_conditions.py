@@ -10,7 +10,6 @@ if __name__ == "__main__":
     a_boolean = False
     CONTANT_PI = 3.14
 
-
     if not nothing:
         print( "nothing is nothing" )
 

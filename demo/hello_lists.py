@@ -56,6 +56,8 @@ if __name__ == "__main__":
     print("\n## Joining lists")
     print( ", ".join( list4 ) )
 
+    print("\n## Map lists")
+    print( list(map(lambda x: x * x, range(10))) )
 
     ######################################################
     print("\n# Using lists as stacks")
@@ -89,5 +91,3 @@ if __name__ == "__main__":
     pprint( queue )
 
     ######################################################
-
-    
