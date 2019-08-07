@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+import string
 
 from pprint import pprint
 
@@ -22,7 +23,17 @@ class RandomInteger( object ):
         for i in range( self._num ):
             yield random.randint(1, self._maxval )
 
+class RandomString( object ):
 
+    def __init__( self, len = 8 ):
+        self._length = len
+        self._subset = string.digits+string.ascii_lowercase+string.ascii_uppercase
+
+    def __iter__( self ):
+        res = ""
+        for r in RandomInteger( self._length, self._length ):
+            res += self._subset[ r ]
+        yield res
 
 if __name__ == "__main__":
 
@@ -32,3 +43,9 @@ if __name__ == "__main__":
     print( "# ---------------------------------- ")
     for x in RandomInteger( 10, 99 ):
         print( x )
+
+    print( "# ---------------------------------- ")
+
+    for i in range( 10 ):
+        for t in RandomString( 32 ):
+            print( "%d : %s" % ( i, t ) )
