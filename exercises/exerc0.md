@@ -1,4 +1,21 @@
 
+# Getting started
+
+1. Create a directory "test" in this projects root directory.
+2. In the directory, create and edit a file e.g. test1.py
+3. Use your favorite editor to write your code, then run with python3
+
+To setup virtualenv, use the make file:
+```bash
+make init
+```
+Note: you need to have internet connection for this part (or when getting external modules).
+
+## Indentation is important!
+
+Space or tabs, it's up to you. They just have to be consistent.
+
+
 # Basics
 
 ## Variables
