@@ -20,9 +20,20 @@ class Test1( object ):
     def create( param ):
         return Test1( param )
 
+class Test2( Test1 ):
+
+    def __init__( self, param, data ):
+        Test1.__init__(self, param )
+        self._data = data
+
+    def __str__( self ):
+        return "%s;%s" % ( super().__str__(), self._data.__str__()  )
+
 
 if __name__ == "__main__":
 
     print( Test1( "test" ) )
 
     print( Test1.create( "hello" ) )
+
+    print( Test2( "foo", "bar" ) )
