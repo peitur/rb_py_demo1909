@@ -29,11 +29,12 @@ class Test2( Test1 ):
     def __str__( self ):
         return "%s;%s" % ( super().__str__(), self._data.__str__()  )
 
+    def create( param, data = "oops" ):
+        return Test2( param, data )
 
 if __name__ == "__main__":
 
     print( Test1( "test" ) )
-
     print( Test1.create( "hello" ) )
-
     print( Test2( "foo", "bar" ) )
+    print( Test2.create( "foo" ) )
