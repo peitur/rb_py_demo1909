@@ -22,6 +22,10 @@ def _read_text( filename ):
 
     return result
 
+## read filename directly and parse content
+def _read_json_pure( filename ):
+    return json.load( open( filename ) ) )
+
 ## convert the text read from file from json (assumed) to python internal structure
 def _read_json( filename ):
     return json.loads( "\n".join( _read_text( filename ) ) )

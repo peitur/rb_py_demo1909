@@ -15,10 +15,12 @@ def func4( v1, v2 = "default", **v3 ):
         print("[func4] v3-length: %d" % ( len( v3 )) )
         for x in v3:
             print( "[func4]\t\t %s : %s" % ( x, v3[x] ) )
+    return len( v3 )
 
 def func5( *v1 ):
     for x in v1:
         print("[func5]\t\t %s" % ( x ) )
+    return len( v1 )
 
 def func6( v1, *v2, **v3 ):
     print("[func6] v1: %s" % ( v1 ) )

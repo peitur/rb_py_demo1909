@@ -6,11 +6,6 @@ if __name__ == "__main__":
 
     ## empty dictionary, empty
     dict0 = dict()
-    print( dir( dict0 ))
-
-
-    print("\n# Supported object fuctions and functionality")
-    pprint( dir( dict0 ) )
 
     ## creting a simple dict of numbers
     dict1 = { "103":"aaaa", "101":"bbbb", "108":"cccc", "114":"dddd", "105":"eeee" }
@@ -47,3 +42,9 @@ if __name__ == "__main__":
 
     print("\n## Joining dicts")
     print( ", ".join( dict4.keys() ) )
+
+    print( dict4["b"] )
+    print( dict4.get("x", "missing" )
+    dict4["4"] = "newval"
+    dict4["x"] = "exists"
+    print( dict4.get("x", "missing" )
