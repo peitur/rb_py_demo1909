@@ -34,6 +34,9 @@ if __name__ == "__main__":
     print("\n# dict3, copy of dict1")
     pprint( dict3 )
 
+    pritn("\n# check for elemnt in dict")
+    if "a" in dict4:
+        print("a is in dict4")
 
     print("\n# lets print a dict with indexes" )
     for i, e in enumerate( dict1 ):

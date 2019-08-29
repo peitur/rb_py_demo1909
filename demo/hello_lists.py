@@ -45,6 +45,9 @@ if __name__ == "__main__":
     print("\n# list3, copy of list1")
     pprint( list3 )
 
+    print("\n# element in list4")
+    if "a" in list4:
+        print("a is in list4")
 
     print("\n# lets print a list with indexes" )
     for i, e in enumerate( list1 ):
