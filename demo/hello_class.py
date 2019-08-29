@@ -34,6 +34,10 @@ class Test2( Test1 ):
 
 if __name__ == "__main__":
 
+    print("#"*32)
+    pprint( dir( Test2 ))
+    print("#"*32)
+
     print( Test1( "test" ) )
     print( Test1.create( "hello" ) )
     print( Test2( "foo", "bar" ) )
