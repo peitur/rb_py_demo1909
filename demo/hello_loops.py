@@ -9,7 +9,7 @@ def loop_part1():
 ##########################################################
 ## Part 2, looping structures
 ##########################################################
-def loop_part2():
+def loop_part2_list():
     ## empty list of whatever, empty
     list0 = list()
     list1 = []
@@ -32,12 +32,26 @@ def loop_part2():
     for a, b  in enumerate( list3 ):
         print( "%s => %s" % (a, b) )
 
+
+
+def loop_part2_dict():
+
     print("############# DICTS ##############")
     ## empty dictionary, empty
     dict0 = dict()
-    dict1 = {}
+    dict1 = {"a": "alfa", "b":"beta", "c": "hmmm", "g": "gama"}
 
+    print("\n# print keys")
+    for x in dict1:
+        print(x)
 
+    print("\n# print keys and values")
+    for x in dict1:
+        print("%s => %s" % ( x, dict1[x]) )
+
+    print("\n# print enumerated keys and values")
+    for a,b in enumerate( dict1 ):
+        print("%d => %s => %s" % ( a, b, dict1[b] ) )
 
 
 if __name__ == "__main__":
@@ -51,7 +65,8 @@ if __name__ == "__main__":
     ##########################################################
     ## Part 2, looping structures
     ##########################################################
-    loop_part2()
+    loop_part2_list()
+    loop_part2_dict()
 
     ##########################################################
     ## Part 3, iterators
