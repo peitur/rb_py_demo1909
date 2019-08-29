@@ -7,11 +7,14 @@ from pprint import pprint
 
 def run( cmd, **opt ):
         result = list()
+        debug = False
+        if 'debug' in opt and opt['debug'] in (True, False):
+            debug = opt['debug']
 
         if type( cmd ).__name__ == "str":
             cmd = shlex.split( cmd )
 
-        print( "Running: '%s'" % ( " ".join( cmd ) ) )
+        if debug: print( "Running: '%s'" % ( " ".join( cmd ) ) )
 
         prc = subprocess.Popen( cmd, stdout = subprocess.PIPE, stderr = subprocess.STDOUT, universal_newlines=True )
         for line in prc.stdout.readlines():
@@ -21,5 +24,9 @@ def run( cmd, **opt ):
 
 
 if __name__ == "__main__":
-    pprint( run( "ls -al" ) )
-    pprint( run( "ls -al wekf" ) )
+
+    cmds = ["ls -al","ls -al wekf", "dmesg"]
+    for cmd in cmds:
+        print("%s\n> Running command: '%s' <\n%s" % ( "\n%s" % ( "-"*40 ), cmd, "-"*40 ))
+        pprint( run( cmd ) )
+        print("%s%s" % (">"*20, "<"*20) )
