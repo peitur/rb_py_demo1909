@@ -13,7 +13,7 @@ def run( cmd, **opt ):
 
         print( "Running: '%s'" % ( " ".join( cmd ) ) )
 
-        prc = subprocess.Popen( cmd, universal_newlines=True, stdout=subprocess.PIPE )
+        prc = subprocess.Popen( cmd, stdout = subprocess.PIPE, stderr = subprocess.STDOUT, universal_newlines=True )
         for line in prc.stdout.readlines():
             result.append( line.lstrip().rstrip() )
 
@@ -22,3 +22,4 @@ def run( cmd, **opt ):
 
 if __name__ == "__main__":
     pprint( run( "ls -al" ) )
+    pprint( run( "ls -al wekf" ) )
