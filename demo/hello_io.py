@@ -11,7 +11,7 @@ def _read_text( filename ):
     try:
         fd = open( filename, "r" )
         for line in fd.readlines():
-            result.append( line.lstrip().rstrip() )
+            result.append( line )
         return result
     except Exception as e:
         print("ERROR Reading %s: %s" % ( filename, e ))
