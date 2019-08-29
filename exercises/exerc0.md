@@ -49,10 +49,10 @@ TIP: Use the enumerate builtin function.
 3. Create a list of numbers (float and integers) and calculate the average value.
 
 
-3.1. Modify 3 with type checks. Check for int and float tpyes. Anything else should be just ignored.
+4. Modify 3 with type checks. Check for int and float tpyes. Anything else should be just ignored.
 Note: Remember that this changes the average item count.
 
-4. Create a list of simple mathematical (lambda) functions operating on integer pairs ( +, -, /, *, ** ).
+5. Create a list of simple mathematical (lambda) functions operating on integer pairs ( +, -, /, *, ** ).
 Create a function that takes two numbers processing them with each operation in the list. Sum all results and return it.
 Print each element using a loop and the sum.
 
@@ -69,8 +69,8 @@ b: 2
 sum: 22.5
 ```
 
-5. Create a dict that stores the results of each operation in 3. Key is a operation indicator.
+6. Create a dict that stores the results of each operation in 3. Key is a operation indicator.
 Print each element using a loop.
 
-6. Use list comprehension for list processing. Create a list of strings (different length).
+7. Use list comprehension for list processing. Create a list of strings (different length).
 Return all the string items longer then 3 characters.
