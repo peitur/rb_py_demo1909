@@ -32,6 +32,8 @@ def loop_part2_list():
     for a, b  in enumerate( list3 ):
         print( "%s => %s" % (a, b) )
 
+    print("\n## Print with list comprehension:")
+    [ print( x ) for x in list3 ]
 
 
 def loop_part2_dict():
@@ -45,14 +47,19 @@ def loop_part2_dict():
     for x in dict1:
         print(x)
 
-    print("\n# print keys and values")
+    print("\n# print keys and values:")
     for x in dict1:
         print("%s => %s" % ( x, dict1[x]) )
 
-    print("\n# print enumerated keys and values")
+    print("\n# print enumerated keys and values:")
     for a,b in enumerate( dict1 ):
         print("%d => %s => %s" % ( a, b, dict1[b] ) )
 
+    print("\n# print with list comprehension (list version):")
+    [ print( x ) for x in dict1 ]
+
+    print("\n# print with list comprehension (dict version):")
+    { print( x ) for x in dict1 }
 
 if __name__ == "__main__":
 
