@@ -13,3 +13,8 @@ if __name__ == "__main__":
     for item in data1:
         if r1.match( item ):
             print( item )
+
+    for item in data1:
+        g = r1.findall( item )
+        if g:
+            pprint( g )
