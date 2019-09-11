@@ -5,7 +5,7 @@ import subprocess, shlex
 
 from pprint import pprint
 
-ALLOWED_COMMANDS=["shasum", "sha1sum","sha256sum", "sha512sum", "md5sum", "cat", "grep"]
+ALLOWED_COMMANDS=["shasum", "sha1sum","sha256sum", "sha512sum", "md5sum", "cat", "grep", "ls"]
 NOT_ALLOWED_CHAR=["|", ">", "<", ";"]
 
 
@@ -47,7 +47,28 @@ def run_yield( cmd, **opt ):
             if prc.poll():
                 break
 
+def command_valid( command ):
 
+    if type( command ).__name__ == "str":
+        command = shlex.split( command )
+
+    cmdShort = re.split( r'/', command[0] )[-1]
+
+    if cmdShort not in ALLOWED_COMMANDS:
+        raise AttributeError( "Command not allowed" )
+
+    for x in NOT_ALLOWED_CHAR:
+        if x in " ".join( command ):
+            raise AttributeError("Character not allowed")
+
+    return True
 
 if __name__ == "__main__":
-    pass
+
+    try:
+        command = sys.argv[1]
+        if command_valid( command ):
+            pprint( run( command ) )
+
+    except Exception as e:
+        pprint(e)
