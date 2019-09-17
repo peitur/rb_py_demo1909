@@ -3,6 +3,12 @@
 import os, sys
 import random
 import string
+import datetime
+import json
+from flask import Flask, escape, request
+
+app = Flask(__name__)
+
 
 from pprint import pprint
 
@@ -40,30 +46,21 @@ def has_special( block ):
             return True
     return False
 
+@app.route('/random')
+def page_mkcode_default( ):
+    return page_mkcode( 8, 4 )
 
-if __name__ == "__main__":
-    opt = dict()
-
-    if len( sys.argv ) < 3:
-        print("%s <blocks> <block-len>" %( sys.argv[0] ))
-        sys.exit(1)
-
-    nblocks = int( sys.argv[1] )
-    blength = int( sys.argv[2] )
-
-    print("# Blocks: %d" % ( nblocks ) )
-    print("# Block length: %d" % ( blength ) )
-    print("# Total length: %d" % ( nblocks * blength ) )
-
-    if blength < 4:
-        print("To short block length, must be over 4")
-        exit(1)
-
+@app.route('/random/<blocks>/<bsize>')
+def page_mkcode( blocks, bsize ):
     result = ""
-
-    for i in range( nblocks ):
+    for i in range( int( blocks ) ):
         s = ""
         while not has_number( s ) or not has_lowercase( s ) or not has_uppercase( s ) or not has_special( s ):
-            s = random_string( blength )
+            s = random_string( int( bsize ) )
         result += s
-    print( result )
+
+    return json.dumps( {"timestamp": str( datetime.datetime.now() ), "code": result, "length": str( int( bsize ) * int( blocks ) ) } )
+
+
+if __name__ == "__main__":
+    app.run( host="0.0.0.0", port=9999, debug=True )
