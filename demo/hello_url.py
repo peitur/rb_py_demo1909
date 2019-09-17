@@ -8,8 +8,14 @@ import json
 
 from pprint import pprint
 
+def get_token( ):
+    return os.getenv( "GITHUB_TOKEN" )
+
 def get_pypi_url( module = "" ):
     return "https://pypi.python.org/pypi/%s/json" % ( module )
+
+def get_github_commit_url( user, repo ):
+    return "https://api.github.com/repos/%s/%s/commits" % ( user, repo )
 
 def get_request( url , **opt ):
 

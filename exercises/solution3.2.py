@@ -33,10 +33,6 @@ def run_ping( opt={} ):
         return prc.returncode
 
 
-
-
-from pprint import pprint
-
 if __name__ == "__main__":
 
     options = dict()

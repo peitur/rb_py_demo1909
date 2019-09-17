@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os, sys, re
-
 from pprint import pprint
 
 def iterfile( filename ):
@@ -27,8 +26,6 @@ if __name__ == "__main__":
             if i not in data:
                 data[i] = 0
             data[i] += 1
-
-
 
     for i in sorted( data.items(), key=lambda x: x[1] ):
         print( i )
