@@ -8,19 +8,19 @@ logger = None
 if __name__ == "__main__":
 
     logger = logging.getLogger( __name__ )
-    formatter = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+    formatter = logging.Formatter( u'%(asctime)s - %(levelname)s - %(name)s - %(message)s' )
 
     outhandler = logging.StreamHandler()
-    syshandler = logging.handlers.SysLogHandler( address='/dev/log', facility=logging.handlers.LOG_USER )
+    syshandler = logging.handlers.SysLogHandler( address='/dev/log', facility=logging.handlers.SysLogHandler.LOG_USER )
 
     outhandler.setFormatter( formatter )
     syshandler.setFormatter( formatter )
 
-    outhandler.setLevel( logging.DEBUG )
+    logger.setLevel( logging.DEBUG )
 
     logger.addHandler( outhandler )
     logger.addHandler( syshandler )
 
 
-    for i in range(:2048):
+    for i in range(0,2048):
         logger.info( "Log message %s" % (i) )
