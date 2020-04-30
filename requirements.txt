@@ -1,4 +1,6 @@
+# https://dpkt.readthedocs.io/en/latest/
 dpkt
 scapy
 scapy-http
-scapy-ssl_tls
+# http://www.paramiko.org/
+paramiko
