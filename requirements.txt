@@ -1,5 +1,6 @@
 # https://dpkt.readthedocs.io/en/latest/
 dpkt
+pcapy
 scapy
 scapy-http
 # http://www.paramiko.org/
