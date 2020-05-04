@@ -6,3 +6,4 @@ scapy-http
 # http://www.paramiko.org/
 paramiko
 numpy
+Flask
