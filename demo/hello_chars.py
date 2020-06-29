@@ -8,4 +8,6 @@ if __name__ == "__main__":
         print( "%s > %s" % ( x, chr(x) ) )
 
     for x in string.digits+string.ascii_letters+string.ascii_lowercase+string.ascii_uppercase:
-        print("%s > %s" % ( x, ord(x) ) )
+        z = ord('0')
+        y = ord(x) ^ z
+        print("%s > %s xor %s => %s" % ( x, ord(x), bin(z), y ) )
